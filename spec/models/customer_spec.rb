@@ -18,12 +18,14 @@ RSpec.describe Customer, type: :model do
   it 'creates a customer with factory bot' do
     customer = create(:customer)
 
-    expect(customer.name).to eq('John Doe')
+    expect(customer.name).to be_a(String)
   end
 
   it 'builds a customer with factory bot' do
     customer = build(:customer)
 
-    expect(customer.email).to eq('john@doe.com')
+    expect(customer.email).to be_a(String)
   end
+
+  it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
 end
