@@ -14,4 +14,16 @@ RSpec.describe Customer, type: :model do
 
     expect(customer.name).to eq('John Doe')
   end
+
+  it 'creates a customer with factory bot' do
+    customer = create(:customer)
+
+    expect(customer.name).to eq('John Doe')
+  end
+
+  it 'builds a customer with factory bot' do
+    customer = build(:customer)
+
+    expect(customer.email).to eq('john@doe.com')
+  end
 end
