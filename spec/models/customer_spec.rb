@@ -28,4 +28,14 @@ RSpec.describe Customer, type: :model do
   end
 
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
+
+  it 'creates a default customer' do
+    customer = create(:customer_default)
+    expect(customer.vip).to be_falsey
+  end
+
+  it 'creates a vip customer' do
+    customer = create(:customer_with_vip)
+    expect(customer.vip).to be_truthy
+  end
 end
