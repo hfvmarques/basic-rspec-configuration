@@ -38,4 +38,11 @@ RSpec.describe Customer, type: :model do
     customer = create(:customer_with_vip)
     expect(customer.vip).to be_truthy
   end
+
+  it 'creates using attributes for' do
+    attrs = attributes_for(:customer_with_vip)
+    customer = Customer.create(attrs)
+
+    expect(customer.vip).to be_truthy
+  end
 end
