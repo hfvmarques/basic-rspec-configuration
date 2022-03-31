@@ -45,4 +45,10 @@ RSpec.describe Customer, type: :model do
 
     expect(customer.vip).to be_truthy
   end
+
+  it 'transient attribute' do
+    customer = create(:customer_default, upcased: false)
+
+    expect(customer.name.upcase).not_to eq(customer.name)
+  end
 end
