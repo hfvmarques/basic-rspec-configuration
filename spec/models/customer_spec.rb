@@ -30,25 +30,31 @@ RSpec.describe Customer, type: :model do
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
 
   it 'creates a default customer' do
-    customer = create(:customer_default)
+    customer = create(:customer, :default)
     expect(customer.vip).to be_falsey
   end
 
   it 'creates a vip customer' do
-    customer = create(:customer_with_vip)
+    customer = create(:customer, :with_vip)
     expect(customer.vip).to be_truthy
   end
 
   it 'creates using attributes for' do
-    attrs = attributes_for(:customer_with_vip)
+    attrs = attributes_for(:customer, :with_vip)
     customer = Customer.create(attrs)
 
     expect(customer.vip).to be_truthy
   end
 
   it 'transient attribute' do
-    customer = create(:customer_default, upcased: false)
+    customer = create(:customer, :default, upcased: false)
 
     expect(customer.name.upcase).not_to eq(customer.name)
+  end
+
+  it 'Male customer with vip' do
+    customer = create(:customer, :with_vip, :male)
+    expect(customer.gender).to eq 'M'
+    expect(customer.vip).to eq true
   end
 end

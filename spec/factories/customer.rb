@@ -7,12 +7,20 @@ FactoryBot.define do
     name { Faker::Name.name }
     email { Faker::Internet.email }
 
-    factory :customer_with_vip do
+    trait :male do
+      gender { 'M' }
+    end
+
+    trait :female do
+      gender { 'F' }
+    end
+
+    trait :with_vip do
       vip { true }
       days_to_pay { 30 }
     end
 
-    factory :customer_default do
+    trait :default do
       vip { false }
       days_to_pay { 15 }
     end
