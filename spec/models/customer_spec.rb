@@ -17,6 +17,12 @@ RSpec.describe Customer, type: :model do
 
   it 'creates a customer with factory bot' do
     customer = create(:customer)
+    customer2 = create(:customer)
+
+    puts customer.email
+    puts customer.name
+    puts customer2.email
+    puts customer2.name
 
     expect(customer.name).to be_a(String)
   end
