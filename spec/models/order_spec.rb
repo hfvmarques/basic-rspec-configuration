@@ -25,6 +25,12 @@ RSpec.describe Order, type: :model do
     expect(orders.count).to eq(3)
   end
 
+  it 'has a pair of orders' do
+    orders = create_pair(:order)
+
+    expect(orders.count).to eq(2)
+  end
+
   it 'has_many' do
     customer = create(:customer, :with_orders)
 
