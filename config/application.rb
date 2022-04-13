@@ -34,6 +34,8 @@ module TestApp
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    config.active_record.verify_foreign_keys_for_fixtures = false
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: false,
