@@ -30,6 +30,8 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
 
+  config.order = 'random'
+
   config.before(:suite) do
     FactoryBot.lint
   end
