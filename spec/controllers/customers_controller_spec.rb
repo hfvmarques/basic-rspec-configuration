@@ -47,6 +47,12 @@ RSpec.describe CustomersController, type: :controller do
         customer = create(:customer)
       end
 
+      it 'flash notice' do
+        post :create, params: { customer: attributes_for(:customer) }
+        
+        expect(flash[:notice]).to eq 'Customer was successfully created.'
+      end
+
       it 'with valid attributes' do
         customer_params = attributes_for(:customer)        
 
