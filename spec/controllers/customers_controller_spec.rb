@@ -10,6 +10,8 @@ RSpec.describe CustomersController, type: :controller do
       it { expect(response).to be_successful }
       it { expect(response).to have_http_status(200) }
     end
+
+    it { is_expected.to route(:get, '/customers').to(action: :index) }
   
     context 'GET #show' do
       before do
