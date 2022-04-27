@@ -2,7 +2,8 @@ require 'factory_bot'
 require 'httparty'
 require 'webmock/rspec'
 require 'vcr'
-require "shoulda/matchers"
+require 'shoulda/matchers'
+require 'capybara/rspec'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
