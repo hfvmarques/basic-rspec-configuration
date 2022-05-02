@@ -4,6 +4,7 @@ require 'webmock/rspec'
 require 'vcr'
 require 'shoulda/matchers'
 require 'capybara/rspec'
+require 'rspec/json_expectations'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
