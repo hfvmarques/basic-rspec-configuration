@@ -37,6 +37,14 @@ RSpec.describe 'Customers', type: :request do
         email: (be_kind_of String)      
       )
     end
+
+    it 'show - RSpec puro + JSON' do
+      customer = create(:customer)
+      get "/customers/#{customer.id}.json"
+      
+      response_body = JSON.parse(response.body)
+      expect(response_body.fetch("name")).to eq customer.name
+    end
   end
 
   # describe 'POST /customers' do
