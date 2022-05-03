@@ -38,4 +38,20 @@ RSpec.describe 'Customers', type: :request do
       )
     end
   end
+
+  # describe 'POST /customers' do
+    
+  #   it 'create a customer as JSON' do
+  #     member = create(:member)
+  #     login_as(member, scope: :member)
+      
+  #     headers = { "ACCEPT" => "application/json" }
+  
+  #     customer_params = attributes_for(:customer)
+      
+  #     post "/customers.json", params: { customer: customer_params }, headers: headers
+
+  #     expect(response).to have_http_status(201)
+  #   end
+  # end
 end
