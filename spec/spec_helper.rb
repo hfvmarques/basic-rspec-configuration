@@ -6,6 +6,7 @@ require 'shoulda/matchers'
 require 'capybara/rspec'
 require 'rspec/json_expectations'
 require 'pry'
+require 'json_matchers/rspec'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"

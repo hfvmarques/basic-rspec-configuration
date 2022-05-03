@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Customers', type: :request do
   describe 'GET /customers' do
+    it 'JSON schema' do
+      customer = create(:customer)
+
+      get "/customers/#{customer.id}.json"
+
+      expect(response).to match_response_schema('customer')
+    end
     it 'gets all customers' do
       get customers_path
 

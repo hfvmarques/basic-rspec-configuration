@@ -71,6 +71,8 @@ group :development, :test do
   gem 'vcr'
 
   gem 'rails-controller-testing'
+
+  gem 'json_matchers'
 end
 
 group :test do
